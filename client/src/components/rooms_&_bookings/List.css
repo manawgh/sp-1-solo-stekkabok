@@ -1,0 +1,10 @@
+.room-list {
+  margin: 3rem;
+  max-width: 80vw;
+  max-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  gap: 2rem;
+}

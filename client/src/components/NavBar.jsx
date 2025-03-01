@@ -7,7 +7,7 @@ function NavBar () {
     <nav className='navbar'>
       <NavLink to="/" end>Home</NavLink>
       <NavLink to="/facilities">Facilities</NavLink>
-      <NavLink to="/rooms">Rooms & Booking</NavLink>
+      <NavLink to="/bookings">Rooms & Booking</NavLink>
       <NavLink to="/info">Practical Info</NavLink>
       <NavLink to="/owners">Fanney & Óskar</NavLink>
       <NavLink to="/patro">Patró & The Westfjords</NavLink>
