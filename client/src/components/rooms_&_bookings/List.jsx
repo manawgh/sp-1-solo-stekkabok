@@ -1,4 +1,5 @@
 import Room from './Room';
+import './List.css'
 
 function List ({availableRooms}) {
 

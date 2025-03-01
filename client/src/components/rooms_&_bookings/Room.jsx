@@ -1,3 +1,5 @@
+import './Room.css'
+
 function Room ({name, image, price}) {
   
   return (

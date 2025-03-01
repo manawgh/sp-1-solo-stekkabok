@@ -19,6 +19,10 @@ form {
   gap: 1rem;
 }
 
+input {
+    color: #000;
+}
+
 button {
   all: unset;
   align-self: center;
