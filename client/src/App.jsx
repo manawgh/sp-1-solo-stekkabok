@@ -45,7 +45,7 @@ function App () {
           <Route path='/owners' element={<Owners/>}/>
           <Route path='/patro' element={<Patro/>}/>
         </Routes>
-        <NavBar/>
+        <NavBar className="navbar"/>
       </Router>
     </>
   )
