@@ -12,7 +12,7 @@ function Bookings ({checkAvailRooms, availableRooms}) {
   } */
 
   return (
-    <div className="section bookings">
+    <div className="bookings">
       <Form checkAvailRooms={checkAvailRooms}/>
       <List availableRooms={availableRooms}/>
     </div>

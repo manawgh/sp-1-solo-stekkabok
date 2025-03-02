@@ -1,6 +1,8 @@
 .room-list {
-  margin: 3rem;
-  max-width: 80vw;
+  margin-top: 7rem;
+  margin-left: 5rem;
+  margin-right: 5rem;
+  max-width: 90vw;
   max-height: 100vh;
   display: flex;
   flex-direction: column;

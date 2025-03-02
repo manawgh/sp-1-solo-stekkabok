@@ -29,7 +29,8 @@ function Form ({checkAvailRooms}) {
   }
 
   return (
-    <div className='form'>
+    <div className='form-container'>
+      <h2>Book a room</h2>
       <form onSubmit={handleSubmit}>
 
         <div className='inputs'>

@@ -1,20 +1,63 @@
 .room {
+  display: flex;
+  gap: 2rem;
+}
+
+.image {
   position: relative;
+  height: 250px;
 }
 
-.room > img {
-  height: 200px;
+.image > img {
+  height: 250px;
 }
 
-.room > .number {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  font-style: italic;
+.room-info {
+  border: solid grey 2px;
+  height: 250px;
+  position: relative;
+  background-color: rgb(59, 59, 59);
 }
 
-.room > .price {
+.room-info > * {
+  margin: 2rem;
+}
+
+.book-now {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
   position: absolute;
   bottom: 15px;
   right: 15px;
+  margin: 0;
+}
+
+.book-now > button {
+  all: unset;
+  padding: 0.5rem 1rem;
+  background-color: rgb(40, 40, 40);
+}
+
+.book-now > button:hover {
+  background-color: rgb(45, 45, 45);
+}
+
+.icon-container {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.icons {
+height: 18px;
+}
+
+.sleeps {
+  display: flex;
+  align-items: center;
+  gap: 3px;
 }
