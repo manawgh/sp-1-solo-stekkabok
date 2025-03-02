@@ -5,7 +5,7 @@ function NavBar () {
   
   return (
     <nav className='navbar'>
-      <NavLink to="/" end>Home</NavLink>
+      <NavLink to="/">Home</NavLink>
       <NavLink to="/facilities">Facilities</NavLink>
       <NavLink to="/bookings">Rooms & Booking</NavLink>
       <NavLink to="/info">Practical Info</NavLink>

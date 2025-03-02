@@ -25,26 +25,30 @@ function getFiltered (req, res) {
 
 // create a stripe checkout session
 async function checkOut (req, res) {
-  console.log(req.body);
-  const session = await stripe.checkout.sessions.create({
-    mode: 'payment',
-    ui_mode: 'embedded',
-    payment_method_types: ['card'],
-    line_items: [
-      {
-        price_data: {
-          currency: 'isk',
-          product_data: {
-            name: req.body.name,
+  try {
+    const session = await stripe.checkout.sessions.create({
+      mode: 'payment',
+      ui_mode: 'embedded',
+      payment_method_types: ['card'],
+      line_items: [
+        {
+          price_data: {
+            currency: 'isk',
+            product_data: {
+              name: req.body.name,
+            },
+            unit_amount: req.body.price,
           },
-          unit_amount: req.body.price,
+          quantity: 1
         },
-        quantity: 1
-      },
-    ],
-    return_url: 'http://localhost:5173'
-  });
-  res.send({clientSecret: session.client_secret});
+      ],
+      return_url: 'http://localhost:5173'
+    });
+    res.send({clientSecret: session.client_secret});
+  }
+  catch (err) {
+    console.log(err);
+  }
 }
 
 module.exports = { getAll, getFiltered, checkOut };

@@ -6,6 +6,7 @@ import Bookings from './components/Bookings'
 import Info from './components/Info'
 import Owners from './components/Owners'
 import Patro from './components/Patro'
+import Payment from './components/payments_page/Payment'
 import NavBar from './components/NavBar'
 import { getAllRooms, getAvailableRooms } from './helper_funcs'
 import './App.css'
@@ -36,6 +37,7 @@ function App () {
           <Route path='/info' element={<Info/>}/>
           <Route path='/owners' element={<Owners/>}/>
           <Route path='/patro' element={<Patro/>}/>
+          <Route path='/payment' element={<Payment/>}/>
         </Routes>
         <NavBar className="navbar"/>
       </Router>

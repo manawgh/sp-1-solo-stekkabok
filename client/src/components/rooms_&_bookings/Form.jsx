@@ -49,7 +49,7 @@ function Form ({checkAvailRooms}) {
 
         </div>
 
-        <button type='submit'>Submit</button>
+        <button type='submit' className='sub-btn'>Submit</button>
 
       </form>
     </div>

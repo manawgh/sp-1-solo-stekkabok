@@ -42,8 +42,9 @@ async function requestCheckout (roomData) {
     const response = await fetch('http://localhost:3000/create-checkout-session',
       {method: 'POST', body: JSON.stringify(roomData), headers: {"Content-Type": "application/json"}});
     if (!response.ok) throw new Error ('error sending checkout request.');
-    const rooms = await response.json();
-    return rooms;
+    const { clientSecret } = await response.json();
+    console.log(clientSecret);
+    return clientSecret;
   }
   catch (err) {
     console.log(err)
