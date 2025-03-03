@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router';
-import { loadStripe } from '@stripe/stripe-js';
-import { EmbeddedCheckoutProvider, EmbeddedCheckout } from '@stripe/react-stripe-js';
-import { requestCheckout } from '../../helper_funcs';
 import RoomZoom from './RoomZoom';
+import Checkout from './Checkout';
+import { loadStripe } from '@stripe/stripe-js';
+import { Elements } from '@stripe/react-stripe-js';
+import { requestCheckout } from '../../helper_funcs';
 import './Payment.css';
 
 function Payment () {
@@ -21,9 +22,9 @@ function Payment () {
     <div id="payment">
       <RoomZoom/>
       { stripePromise && clientSecret && (
-      <EmbeddedCheckoutProvider stripe={stripePromise} options={{clientSecret}}>
-        <EmbeddedCheckout name={name} price={price}/>
-      </EmbeddedCheckoutProvider>
+      <Elements stripe={stripePromise} options={{clientSecret}}>
+        <Checkout name={name} price={price}/>
+      </Elements>
       )}
     </div>
   )
