@@ -5,7 +5,7 @@ function Owners () {
   return (
     <div className="section">
       <h1>OWNERS</h1>
-      <img src="dining.jpg" alt="" />
+      <img src="" alt="" />
     </div>
   )
 }

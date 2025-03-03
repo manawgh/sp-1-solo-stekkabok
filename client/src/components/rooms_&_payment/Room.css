@@ -33,6 +33,10 @@
   margin: 0;
 }
 
+.price {
+  justify-self: flex-start;
+}
+
 .book-btn {
   all: unset;
   padding: 0.5rem 1rem;

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { toOrdinal } from '../../helper_funcs';
 import './Form.css';
 
-function Form ({checkAvailRooms}) {
+function Form ({checkAvailRooms, warning}) {
 
   const [startDate, setStartDate] = useState('');
   const [endDate, setEndDate] = useState('');
@@ -15,16 +15,17 @@ function Form ({checkAvailRooms}) {
     const arrayOfDays= [];
     const start = toOrdinal(startDate);
     const end = toOrdinal(endDate);
-    for (let i=start; i<=end; i++) {
+    for (let i=start; i<end; i++) {
       arrayOfDays.push(i);
     }
-
+    
     // building the booking request
     const bookingRequest = {
       sleeps: parseInt(guests),
-      days: arrayOfDays
+      days: arrayOfDays,
     }
 
+    // passing the request and the number of nights to the top level
     checkAvailRooms(bookingRequest);
   }
 
@@ -33,6 +34,7 @@ function Form ({checkAvailRooms}) {
       <h2>Book a room</h2>
       <form onSubmit={handleSubmit}>
 
+        { warning && <p className='warning'>Please select stay dates!</p> }
         <div className='inputs'>
 
           <div className='labels'>

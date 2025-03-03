@@ -25,6 +25,7 @@ function getFiltered (req, res) {
 
 // create a stripe checkout session
 async function checkOut (req, res) {
+  const { prod_id, price, nights } = req.body;
   try {
     const session = await stripe.checkout.sessions.create({
       mode: 'payment',
@@ -34,15 +35,16 @@ async function checkOut (req, res) {
         {
           price_data: {
             currency: 'isk',
-            product_data: {
-              name: req.body.name,
-            },
-            unit_amount: req.body.price,
+            product: prod_id,
+            unit_amount: price,
           },
-          quantity: 1
+          quantity: nights,
+          /* metadata: {
+            daysBooked: days,
+          } */
         },
       ],
-      return_url: 'http://localhost:5173'
+      return_url: 'http://localhost:5173/bookings',
     });
     res.status(201).json({clientSecret: session.client_secret});
   }
@@ -51,4 +53,14 @@ async function checkOut (req, res) {
   }
 }
 
-module.exports = { getAll, getFiltered, checkOut };
+// update room availability
+function updateAvail (req, res) {
+  const event = req.body;
+  console.log(event.type);
+  res.status(200).end();
+  if (event.type === 'checkout.session.completed') {
+    console.log('Checkout session completed!')
+  }
+}
+
+module.exports = { getAll, getFiltered, checkOut, updateAvail };

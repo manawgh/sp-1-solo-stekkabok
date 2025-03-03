@@ -17,6 +17,13 @@ form {
   gap: 2rem;
 }
 
+.warning {
+  color: rgb(246, 0, 0);
+  align-self: center;
+  position: absolute;
+  top: 380px;
+}
+
 .inputs {
   display: flex;
   gap: 1rem;
