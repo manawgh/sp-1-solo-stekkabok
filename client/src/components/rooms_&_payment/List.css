@@ -1,9 +1,10 @@
 .room-list {
-  margin-top: 7rem;
+  position: relative;
+  top: -36px;
   margin-left: 5rem;
   margin-right: 5rem;
   max-width: 90vw;
-  max-height: 100vh;
+  max-height: 87vh;
   display: flex;
   flex-direction: column;
   overflow-y: auto;
