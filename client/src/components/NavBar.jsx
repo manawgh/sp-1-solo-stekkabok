@@ -1,10 +1,12 @@
-import { NavLink } from 'react-router'
+import { NavLink, useLocation } from 'react-router'
 import './NavBar.css'
 
 function NavBar () {
+
+  const isThanks = useLocation().pathname === '/thanks';
   
   return (
-    <nav className='navbar'>
+    <nav className= {isThanks ? 'navbar-thanks' : 'navbar'}>
       <NavLink to="/">Home</NavLink>
       <NavLink to="/facilities">Facilities</NavLink>
       <NavLink to="/bookings">Rooms & Booking</NavLink>
