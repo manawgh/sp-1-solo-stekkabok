@@ -6,6 +6,7 @@ import Info from './components/Info'
 import Owners from './components/Owners'
 import Patro from './components/Patro'
 import Payment from './components/rooms_&_payment/Payment'
+// import Thanks from './components/Thanks'
 import NavBar from './components/NavBar'
 import './App.css'
 
@@ -22,6 +23,7 @@ function App () {
           <Route path='/owners' element={<Owners/>}/>
           <Route path='/patro' element={<Patro/>}/>
           <Route path='/payment' element={<Payment/>}/>
+          {/* <Route path='/thankyou' element={<Thanks/>}/> */}
         </Routes>
         <NavBar className="navbar"/>
       </Router>

@@ -25,7 +25,7 @@ function getFiltered (req, res) {
 
 // create a stripe checkout session
 async function checkOut (req, res) {
-  const { prod_id, price, nights } = req.body;
+  const { prod_id, price, nights, days } = req.body;
   try {
     const session = await stripe.checkout.sessions.create({
       mode: 'payment',
@@ -39,12 +39,14 @@ async function checkOut (req, res) {
             unit_amount: price,
           },
           quantity: nights,
-          /* metadata: {
-            daysBooked: days,
-          } */
         },
       ],
-      return_url: 'http://localhost:5173/bookings',
+      // store room id and days booked to update room availability upon payment
+      metadata: {
+        prod_id: prod_id,
+        daysBooked: JSON.stringify(days),
+      },
+      return_url: 'http://localhost:5173/thankyou',
     });
     res.status(201).json({clientSecret: session.client_secret});
   }
@@ -56,10 +58,17 @@ async function checkOut (req, res) {
 // update room availability
 function updateAvail (req, res) {
   const event = req.body;
-  console.log(event.type);
   res.status(200).end();
   if (event.type === 'checkout.session.completed') {
-    console.log('Checkout session completed!')
+    // grab custom metadata from session
+    let { prod_id, daysBooked } = event.data.object.metadata;
+    daysBooked = JSON.parse(daysBooked);
+    for (let i=0; i<db.length; i++ ) {
+      // find the booked room and add new booked days to array
+      if (db[i].prod_id === prod_id) {
+        db[i].booked = [...db[i].booked, ...daysBooked];
+      }
+    }
   }
 }
 

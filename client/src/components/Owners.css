@@ -1,0 +1,6 @@
+.descript {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  text-indent: 30px;
+}

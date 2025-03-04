@@ -38,7 +38,6 @@ async function getAvailableRooms (request) {
 
 // send stripe checkout request
 async function requestCheckout (roomData) {
-  console.log(roomData);
   try {
     const response = await fetch('http://localhost:3000/create-checkout-session',
       {method: 'POST', body: JSON.stringify(roomData), headers: {"Content-Type": "application/json"}});
