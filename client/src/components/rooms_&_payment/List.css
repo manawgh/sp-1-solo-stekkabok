@@ -1,8 +1,8 @@
 .room-list {
   position: relative;
   top: -36px;
-  margin-left: 5rem;
-  margin-right: 5rem;
+  margin-left: 3rem;
+  margin-right: 7rem;
   max-width: 90vw;
   max-height: 87vh;
   display: flex;
@@ -17,5 +17,5 @@
   position: relative;
   top: -36px;
   margin-left: 15rem;
-  margin-right: 5rem;
+  margin-right: 10rem;
 }
