@@ -60,7 +60,7 @@ const db = [
     prod_id: 'prod_RsICHJo7xtpIYR',
     sleeps: 4,
     price: 3915000,
-    desc: 'Trying to incorporate the sentence into your project can help you look at it in different and unexpected ways than you would normally on your own.',
+    desc: 'Trying to incorporate the sentence into your project can help you look at it in different and normally on your own timely.',
     booked: [68,69,70],
     imgPath: 'rooms/room_07.jpg'
   },
@@ -87,7 +87,7 @@ const db = [
     prod_id: 'prod_RsIHZnehyRo3TI',
     sleeps: 3,
     price: 2320000,
-    desc: 'For example, the sentence "Jack loves candy" is a complete sentence because it has all three elements needed to make a complete sentence.',
+    desc: 'For example, the sentence "Jack loves candy" is a complete sentence because it has all three.',
     booked: [79,80,81,82],
     imgPath: 'rooms/room_10.jpg'
   }

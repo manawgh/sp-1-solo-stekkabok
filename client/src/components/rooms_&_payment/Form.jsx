@@ -6,7 +6,7 @@ function Form ({checkAvailRooms, warning}) {
 
   const [startDate, setStartDate] = useState('');
   const [endDate, setEndDate] = useState('');
-  const [guests, setGuests] = useState(2);
+  const [guests, setGuests] = useState(1);
 
   function handleSubmit (event) {
     event.preventDefault();

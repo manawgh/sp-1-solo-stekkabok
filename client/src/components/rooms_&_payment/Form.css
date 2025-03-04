@@ -1,4 +1,6 @@
 .form-container {
+  position: relative;
+  top: -5rem;
   max-width: 20vw;
   display: flex;
   flex-direction: column;
@@ -21,7 +23,7 @@ form {
   color: rgb(226, 246, 0);
   align-self: center;
   position: absolute;
-  top: 380px;
+  top: 155px;
 }
 
 .inputs {

@@ -5,22 +5,22 @@
 
 .image {
   position: relative;
-  height: 250px;
+  height: 200px;
 }
 
 .image > img {
-  height: 250px;
+  height: 200px;
 }
 
 .room-info {
   border: solid grey 2px;
-  height: 250px;
+  height: 200px;
   position: relative;
   background-color: rgb(62, 62, 62);
 }
 
 .room-info > * {
-  margin: 2rem;
+  margin: 1.5rem;
 }
 
 .book-now {

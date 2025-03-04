@@ -12,3 +12,10 @@
   align-items: flex-start;
   gap: 2rem;
 }
+
+.list-container > h3 {
+  position: relative;
+  top: -36px;
+  margin-left: 15rem;
+  margin-right: 5rem;
+}
