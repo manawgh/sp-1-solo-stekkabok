@@ -46,7 +46,7 @@ async function checkOut (req, res) {
         prod_id: prod_id,
         daysBooked: JSON.stringify(days),
       },
-      return_url: 'http://localhost:5173/thankyou',
+      return_url: 'http://localhost:5173/thanks',
     });
     res.status(201).json({clientSecret: session.client_secret});
   }

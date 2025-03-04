@@ -1,5 +1,3 @@
-import Beds from '../../../public/icons/bed.png'
-import Wifi from '../../../public/icons/wifi.png'
 import { NavLink } from 'react-router'
 import './Room.css'
 
@@ -23,9 +21,9 @@ function Room ({name, prod_id, image, price, desc, sleeps, days, triggerWarning}
         <div className='icon-container'>
           <div className="sleeps">
             <p>{sleeps}</p>
-            <img className='icons' src={Beds}></img>
+            <img className='icons' src='/icons/bed.png'></img>
           </div>
-          <img className='icons' src={Wifi}></img>
+          <img className='icons' src='/icons/wifi.png'></img>
         </div>
 
         <div className='book-now'>
