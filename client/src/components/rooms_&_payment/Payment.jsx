@@ -8,7 +8,7 @@ import './Payment.css';
 function Payment () {
 
   const [clientSecret, setClientSecret] = useState('');
-  const stripePromise = loadStripe('pk_test_51QxRTwCGr4KIB7NcBkCAmeZQSwZX5sNq0V0O4OaOdnzxnJ3xAyWRT9hOE0nKN73f6lsrQfpSM0cuIu6wTrNNbBr500rorDyi3Z');
+  const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLIC_KEY);
   const { name, prod_id, price, days, nights } = useLocation().state.from;
 
   useEffect( () => {
